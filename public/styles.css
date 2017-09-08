@@ -1,0 +1,185 @@
+/* ======= ======= ======= variables ======= ======= ======= */
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+/* ======= ======= ======= menus ======= ======= ======= */
+/* ======= ======= ======= general ======= ======= ======= */
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "Ariel", sans-serif;
+  background-color: #2A52BE;
+  background-color: #c2cff2;
+  border: 2px solid #0E0EFF; }
+
+/* ======= ======= =======  mixins (defined)  ======= ======= ======= */
+/* ======= ======= =======  mainMenu  ======= ======= ======= */
+#mainMenu {
+  height: 40px;
+  width: 62%;
+  min-width: 505px;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid purple; }
+  #mainMenu .menuItem {
+    float: left;
+    width: 80px;
+    height: 20px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background-color: #2A52BE; }
+  #mainMenu .menuItem:hover {
+    color: #2A52BE;
+    background-color: #6699ff; }
+
+/* ======= ======= =======  miniMenu  ======= ======= ======= */
+.button {
+  width: 60px;
+  height: 18px;
+  margin: 5px;
+  padding: 3px;
+  text-align: center;
+  background-color: #2A52BE;
+  color: white; }
+
+.button:hover {
+  color: #2A52BE;
+  background-color: #6699ff; }
+
+/* ======= ======= =======  sections  ======= ======= ======= */
+.section {
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid purple; }
+
+/* ======= bourbon ======= */
+#header, #footer {
+  background: #ecdfec; }
+
+#header > h1 {
+  margin: 5px;
+  font-family: Lobster; }
+
+/* ======= btnBox ======= */
+#btnBox {
+  height: 90px;
+  border: 2px solid darkorange; }
+
+/* ======= miniMenu ======= */
+#miniMenu {
+  float: right; }
+
+#btnBox {
+  height: 180px;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid purple;
+  background-color: black;
+  /* black OR white select for shader */
+  background-color: white;
+  /* black OR white select for shader */
+  opacity: 0.1;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px; }
+
+#demoTextBox {
+  float: left;
+  height: 100px; }
+
+.demoText {
+  margin: 5px;
+  width: 100px; }
+
+#text-1 {
+  font-size: 6px; }
+
+#text-2 {
+  font-size: 12px; }
+
+#text-3 {
+  font-size: 18px; }
+
+#text-4 {
+  font-size: 24px; }
+
+#text-5 {
+  font-size: 30px; }
+
+#text-6 {
+  font-size: 36px; }
+
+#photos {
+  height: 120px; }
+
+.icon {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 1px solid red; }
+
+#icon-JeffCamb {
+  background-image: url("JeffCamb.jpg");
+  background-size: 100px auto;
+  background-repeat: no-repeat; }
+
+#icon-TomPub {
+  background-image: url("TomPub.jpg");
+  background-size: 100px auto;
+  background-repeat: no-repeat; }
+
+#icon-London {
+  background-image: url("London.jpg");
+  background-size: 100px auto;
+  background-repeat: no-repeat; }
+
+#alert, #notice {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 255px;
+  left: 300px;
+  background-color: #999;
+  border: 2px solid purple; }
+
+#notice {
+  width: 400px;
+  top: 355px;
+  background-color: orange; }
+
+h1 {
+  font-size: 34px; }
+
+#topic {
+  border: 10px solid black; }
+
+/* ======= ======= ======= responsive ======= ======= ======= */
+@media all and (max-width: 650px) and (min-width: 100px) {
+  .menuItem {
+    clear: both; }
+
+  #mainMenu {
+    width: 10%;
+    min-width: 100px;
+    height: 200px; }
+
+  #alert, #notice {
+    top: 160px;
+    left: 200px; }
+
+  #notice {
+    top: 260px;
+    left: 200px; } }
+@media all and (max-width: 400px) and (min-width: 100px) {
+  #topic {
+    min-width: 270px; } }
+@media all and (max-width: 500px) and (min-width: 100px) {
+  #photoBox {
+    height: 340px;
+    min-width: 140px; } }
+
+/*# sourceMappingURL=styles.css.map */

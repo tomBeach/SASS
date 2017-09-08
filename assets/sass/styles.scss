@@ -1,0 +1,199 @@
+/* ======= ======= ======= variables ======= ======= ======= */
+
+// ======= bourbon =======
+@import "bourbon/bourbon";
+
+// ======= colors =======
+$default-blue: #0E0EFF;        // general blue
+$colorPrimary: #2A52BE;        // Cerulean Blue
+$colorSecondary: #ffe6cc;      // Jesse Green
+
+// ======= fonts =======
+$fontHeader: Lobster;
+$default-font-size: 10px;
+
+// ======= Google Fonts =======
+@import url(https://fonts.googleapis.com/css?family=#{$fontHeader});
+
+/* ======= ======= ======= menus ======= ======= ======= */
+
+// ======= mainMenu =======
+$menuItem_W: 80px;
+$menuItem_H: 20px;
+$menuItem_mar: 5px;
+$menuItem_pad: 5px;
+$menuItem_bg: #2A52BE;
+$menuItem_hov: #6699ff;
+$menuItem_txt: white;
+
+// ======= miniMenu =======
+$button_W: 60px;
+$button_H: 10px;
+$button_mar: 5px;
+$button_pad: 5px;
+$button_bg: #2A52BE;
+$button_hov: #6699ff;
+$button_txt: white;
+
+/* ======= ======= ======= general ======= ======= ======= */
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+    font-family: "Ariel", sans-serif;
+    background-color: $colorPrimary;
+    background-color: lighten($colorPrimary, 40%);
+    border: 2px solid $default-blue;
+}
+
+/* ======= ======= =======  mixins (defined)  ======= ======= ======= */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin shader($opacity) {
+    opacity: $opacity;
+}
+
+// ======= imports =======
+@import 'mainMenu';
+@import 'miniMenu';
+
+/* ======= ======= =======  sections  ======= ======= ======= */
+.section {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid purple;
+    // @include border-radius(20px);
+}
+
+/* ======= bourbon ======= */
+#header, #footer {
+    background: tint(thistle, 50%);
+}
+#header > h1 {
+    margin: 5px;
+    font-family: $fontHeader;
+}
+
+/* ======= btnBox ======= */
+#btnBox {
+    height: ($button_H * 3) + 60;
+    border: 2px solid darkorange;
+}
+
+/* ======= miniMenu ======= */
+#miniMenu {
+    float: right;
+}
+
+// ======= mixins (applied) =======
+#btnBox {
+    height: 180px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid purple;
+    background-color: black;        /* black OR white select for shader */
+    background-color: white;        /* black OR white select for shader */
+    @include shader(0.1);
+    @include border-radius(20px);
+}
+
+// ======= for loop =======
+#demoTextBox {
+    float: left;
+    height: 100px;
+}
+.demoText {
+    margin: 5px;
+    width: 100px;
+}
+@for $i from 1 through 6 {
+    #text-#{$i} { font-size: 12px * $i/2; }
+}
+
+// ======= each loop =======
+#photos {
+    height: 120px;
+}
+.icon {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid red;
+}
+@each $photo in JeffCamb, TomPub, London {
+    #icon-#{$photo} {
+        background-image: url('#{$photo}.jpg');
+        background-size: 100px auto;
+        background-repeat: no-repeat;
+    }
+}
+
+// ======= extend =======
+#alert {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    top: 255px;
+    left: 300px;
+    background-color: #999;
+    border: 2px solid purple;
+}
+#notice {
+    @extend #alert;
+    width: 400px;
+    top: 355px;
+    background-color: orange;
+}
+
+// ======= conditionals =======
+$fs: 4;
+h1 {
+    @if $fs == 1{ font-size: $default-font-size }
+    @else if $fs == 2{ font-size: $default-font-size + 8 }
+    @else if $fs == 3{ font-size: $default-font-size + 16 }
+    @else if $fs == 4{ font-size: $default-font-size + 24 }
+}
+
+// ======= placeholders =======
+%thick-line {
+    border: 10px solid black;
+}
+#topic {
+    @extend %thick-line;
+}
+
+/* ======= ======= ======= responsive ======= ======= ======= */
+@media all and (max-width: 650px) and (min-width: 100px) {
+    .menuItem {
+        clear: both;
+    }
+    #mainMenu {
+        width: 10%;
+        min-width: 100px;
+        height: 200px;
+    }
+    #alert {
+        top: 160px;
+        left: 200px;
+    }
+    #notice {
+        top: 260px;
+        left: 200px;
+    }
+}
+@media all and (max-width: 400px) and (min-width: 100px) {
+    #topic {
+        min-width: 270px;
+    }
+}
+@media all and (max-width: 500px) and (min-width: 100px) {
+    #photoBox {
+        height: 340px;
+        min-width: 140px;
+    }
+}

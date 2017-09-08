@@ -1,0 +1,14 @@
+/* ======= ======= =======  miniMenu  ======= ======= ======= */
+.button {
+    width: $button_W;
+    height: $button_H + 8;
+    margin: $button_mar;
+    padding: $button_pad - 2;
+    text-align: center;
+    background-color: $button_bg;
+    color: $button_txt;
+}
+.button:hover {
+    color: $menuItem_bg;
+    background-color: $button_hov;
+}
